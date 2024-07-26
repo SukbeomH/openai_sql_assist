@@ -22,7 +22,7 @@ def get_tables(db_name):
         return [row[0] for row in result]
 
 # Streamlit 앱 구성
-st.write("fisaai에 Databases 목록:")
+st.write("Databases 목록:")
 databases = get_databases()
 st.write(" | ".join(databases))
 
