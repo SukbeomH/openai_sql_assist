@@ -8,3 +8,5 @@ openpyxl
 html5lib
 pymysql
 sqlalchemy
+openai
+os

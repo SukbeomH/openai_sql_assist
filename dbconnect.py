@@ -2,7 +2,6 @@ import pymysql
 from sqlalchemy import create_engine
 import pandas as pd
 import streamlit as st
-import pandas as pd
 import os
 from openai import OpenAI
 
