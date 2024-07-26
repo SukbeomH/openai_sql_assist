@@ -6,7 +6,7 @@ matplotlib
 plotly
 openpyxl
 html5lib
-pymysql
+PyMySQL
 sqlalchemy
 openai
 os
