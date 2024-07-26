@@ -1,11 +1,11 @@
-import pymysql
+#import pymysql
 from sqlalchemy import create_engine
 import pandas as pd
 import streamlit as st
 import os
 from openai import OpenAI
 
-pymysql.install_as_MySQLdb() #파이썬 전용 데이터베이스 커넥터
+# pymysql.install_as_MySQLdb() #파이썬 전용 데이터베이스 커넥터
 
 engine = create_engine('mysql+pymysql://fisaai:woorifisa3!W@118.67.131.22/MySQL')
 
