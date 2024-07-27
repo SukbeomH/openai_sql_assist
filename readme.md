@@ -10,7 +10,7 @@
 
 ### How to use 🤔
 
-1. Local 환경에서 실행하기
+## 1. Local 환경에서 실행하기
 
   a) Clone this repository
 
@@ -36,7 +36,7 @@
   streamlit run dbconnect.py
   ```
 
-2. Docker 환경에서 실행하기
+## 2. Docker 환경에서 실행하기
 
   a) Build Docker Image
 
