@@ -33,4 +33,29 @@
   3) Run Streamlit
 
   ```bash
-  streamlit run 
+  streamlit run dbconnect.py
+  ```
+
+2. Docker 환경에서 실행하기
+
+  1) Build Docker Image
+
+  ```bash
+  docker build -t asq .
+  ```
+
+  2) Run Docker Container
+
+  ```bash
+  docker run -p 8501:8501 asq
+  ```
+
+3. Docker Compose 환경에서 실행하기
+
+  1) Run Docker Compose
+
+  ```bash
+  docker-compose up
+  ```
+
+
