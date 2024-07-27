@@ -12,13 +12,13 @@
 
 1. Local 환경에서 실행하기
 
-  1) Clone this repository
+  a) Clone this repository
 
   ```bash
   git clone {repository_url} {directory_name}
   ```
 
-  2) Install required packages (Use `pip` or `conda`)
+  b) Install required packages (Use `pip` or `conda`)
 
   ```bash
   pip install -r requirements.txt
@@ -30,7 +30,7 @@
   conda install --file requirements.txt
   ```
 
-  3) Run Streamlit
+  c) Run Streamlit
 
   ```bash
   streamlit run dbconnect.py
@@ -38,13 +38,13 @@
 
 2. Docker 환경에서 실행하기
 
-  1) Build Docker Image
+  a) Build Docker Image
 
   ```bash
   docker build -t asq .
   ```
 
-  2) Run Docker Container
+  b) Run Docker Container
 
   ```bash
   docker run -p 8501:8501 asq
@@ -52,7 +52,7 @@
 
 3. Docker Compose 환경에서 실행하기
 
-  1) Run Docker Compose
+  a) Run Docker Compose
 
   ```bash
   docker-compose up
