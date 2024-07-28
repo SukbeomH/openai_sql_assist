@@ -116,6 +116,6 @@ conda deactivate
 - Add README.md
 - Update requirements.txt
 - Add Dockerfile
-- Add Docker Compose
+- Add Docker Compose Yaml
 - Add .gitignore
 - Add venv conf files
