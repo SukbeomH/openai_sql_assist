@@ -54,10 +54,10 @@
 
 3. Docker Compose 환경에서 실행하기
 
-  a) Run Docker Compose
+  c) Run Docker Compose
 
   ```bash
-  docker-compose up
+  docker compose up
   ```
 
 ---
@@ -86,7 +86,6 @@ deactivate
 
 ```bash
 conda create -n ai_sql python=3.11 # 3.12 버전도 가능
-```
 conda activate ai_sql
 ```
 
@@ -114,8 +113,6 @@ conda deactivate
 
 ## v0.0.1
 
-- Initial Fork From [FISA AI SQL Query]("https://github.com/Jurannn/openai_streamlit_sql") Repository
-  - By [Jurannn]("https://github.com/Jurannn")
 - Add README.md
 - Update requirements.txt
 - Add Dockerfile
