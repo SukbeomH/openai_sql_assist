@@ -12,6 +12,15 @@
 
 ### How to use 🤔
 
+## 0. 환경 변수 설정
+
+- `.env` 파일을 생성하여, 환경 변수를 설정합니다.
+  - `DB_PATH` : Database Path를 설정합니다.
+  - `OPENAI_API_KEY` : OpenAI API Key를 설정합니다.
+```
+DB_PATH="mysql+pymysql://{user_name}:{password}@{db_address}/MySQL"
+```
+
 ## 1. Local 환경에서 실행하기
 
   a) Clone this repository
