@@ -1,7 +1,5 @@
 streamlit
 pandas
-finance-datareader
-beautifulsoup4
 matplotlib 
 plotly
 openpyxl
@@ -9,3 +7,4 @@ html5lib
 PyMySQL
 sqlalchemy
 openai
+python-dotenv
