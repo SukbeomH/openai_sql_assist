@@ -1,8 +1,8 @@
+import os
 import pymysql
 from sqlalchemy import create_engine, text
 import pandas as pd
 import streamlit as st
-import os
 from openai import OpenAI
 from dotenv import load_dotenv
 
@@ -49,13 +49,13 @@ def table_definition_prompt(dataframe: pd.DataFrame) -> str:
     """
 
     prompt = """Given the following MySQL Query definition,
-                                    write queries based on the request
-                                    \n### MySQL Query, with its properties:
-                                    
-                                    #
-                                    # df의 컬럼명({})
-                                    #
-                                    """.format(
+                write queries based on the request
+                \n### MySQL Query, with its properties:
+                
+                #
+                # df의 컬럼명({})
+                #
+                """.format(
         ",".join(str(x) for x in dataframe.columns)
     )
 
