@@ -120,8 +120,12 @@ conda deactivate
 
 # 📒 Version History
 
-## v0.0.1
+## v0.0.2
+- Rollback MySQL DB Connection Path
+  - Streamlit 배포를 위해, MySQL DB Connection Path를 다시 하드코딩으로 변경
+- 함수의 설명을 한국어로 변경
 
+## v0.0.1
 - Add README.md
 - Update requirements.txt
 - Add Dockerfile

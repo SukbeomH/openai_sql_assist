@@ -8,14 +8,16 @@ from dotenv import load_dotenv
 
 load_dotenv()  # .env 파일을 읽어서 환경변수로 설정
 pymysql.install_as_MySQLdb()  # 파이썬 전용 데이터베이스 커넥터
-engine = create_engine(os.environ.get('mysql+pymysql://fisaai:woorifisa3!W@118.67.131.22/MySQL'))  # 데이터베이스 연결 엔진
+engine = create_engine(
+    os.environ.get("mysql+pymysql://fisaai:woorifisa3!W@118.67.131.22/MySQL")
+)  # 데이터베이스 연결 엔진
 
 
 def get_databases() -> list:
-    """Get the list of databases in the server
+    """서버에 있는 데이터베이스 목록을 가져오는 함수
 
     Returns:
-        list: The list of databases in the server
+        list: 데이터베이스 목록 리스트
     """
     with engine.connect() as connection:
         result = connection.execute(text("SHOW DATABASES"))
@@ -24,13 +26,13 @@ def get_databases() -> list:
 
 # 테이블 목록을 가져오는 쿼리
 def get_tables(db_name: str) -> list:
-    """Get the list of tables in the database
+    """데이터베이스에 있는 테이블 목록을 가져오는 함수
 
     Args:
-        db_name (str): The name of the database
+        db_name (str): 데이터베이스 이름
 
     Returns:
-        list: The list of tables in the database
+        list: 테이블 목록 리스트
     """
     with engine.connect() as connection:
         connection.execute(text(f"USE {db_name}"))
@@ -39,13 +41,13 @@ def get_tables(db_name: str) -> list:
 
 
 def table_definition_prompt(dataframe: pd.DataFrame) -> str:
-    """Given the dataframe, generate a prompt for the user to write queries based on the request
+    """주어진 데이터프레임을 기반으로 프롬프트를 생성하는 함수
 
     Args:
-        dataframe (pd.DataFrame): The dataframe to generate the prompt
+        dataframe (pd.DataFrame): 데이터프레임
 
     Returns:
-        str: The prompt to be shown
+        str: 제시된 데이터프레임을 기반으로 생성된 프롬프트
     """
 
     prompt = """Given the following MySQL Query definition,
