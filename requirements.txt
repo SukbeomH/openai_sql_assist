@@ -7,4 +7,5 @@ html5lib
 PyMySQL
 sqlalchemy
 openai
+pyyaml
 python-dotenv

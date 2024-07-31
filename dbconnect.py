@@ -4,12 +4,20 @@ from sqlalchemy import create_engine, text
 import pandas as pd
 import streamlit as st
 from openai import OpenAI
-from dotenv import load_dotenv
+from dotenv import load_dotenv  # pip install python-dotenv
+
 
 load_dotenv()  # .env 파일을 읽어서 환경변수로 설정
+HOST = os.getenv("HOST")
+USER = os.getenv("USER")
+PASSWD = os.getenv("PASSWD")
+PORT = os.getenv("PORT")
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+
+
 pymysql.install_as_MySQLdb()  # 파이썬 전용 데이터베이스 커넥터
 engine = create_engine(
-    os.environ.get("mysql+pymysql://fisaai:woorifisa3!W@118.67.131.22/MySQL")
+    f"mysql+pymysql://{USER}:{PASSWD}@{HOST}/MySQL"
 )  # 데이터베이스 연결 엔진
 
 
@@ -67,7 +75,7 @@ def table_definition_prompt(dataframe: pd.DataFrame) -> str:
 # Streamlit 앱 구성
 st.write("Databases 목록:")
 databases = get_databases()
-st.write(" | ".join(databases))
+st.write("\t|\t".join(databases))
 
 # Streamlit 입력 필드
 db = st.text_input("db명 입력해주세요")
@@ -83,7 +91,7 @@ if db:
 
         if table:
             if table in tables:
-                key = st.text_input("openai 키 입력 : ")
+                key = st.text_input("OpenAI API Key를 입력해주세요")
 
                 if key:
                     sql = f"SELECT * FROM {db}.{table}"
