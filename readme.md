@@ -120,6 +120,11 @@ conda deactivate
 
 # 📒 Version History
 
+## v0.0.3
+- env 관련 오류 수정
+  - DB_PATH를 환경 변수로 설정하도록 변경 -> .env 파일로 설정
+  - OpenAI API Key를 환경 변수로 설정하도록 변경 -> .env 파일로 설정
+
 ## v0.0.2
 - Rollback MySQL DB Connection Path
   - Streamlit 배포를 위해, MySQL DB Connection Path를 다시 하드코딩으로 변경
