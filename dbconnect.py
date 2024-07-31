@@ -4,11 +4,19 @@ from sqlalchemy import create_engine, text
 import pandas as pd
 import streamlit as st
 from openai import OpenAI
-from dotenv import load_dotenv
+from dotenv import load_dotenv #pip install python-dotenv 
+
 
 load_dotenv()  # .env 파일을 읽어서 환경변수로 설정
+HOST = os.getenv("HOST")
+USER = os.getenv("USER")
+PASSWD = os.getenv("PASSWD")
+PORT = os.getenv("PORT")
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+
+
 pymysql.install_as_MySQLdb()  # 파이썬 전용 데이터베이스 커넥터
-engine = create_engine(os.environ.get('mysql+pymysql://fisaai:woorifisa3!W@118.67.131.22/MySQL'))  # 데이터베이스 연결 엔진
+engine = create_engine(f'mysql+pymysql://{USER}:{PASSWD}@{HOST}/MySQL')  # 데이터베이스 연결 엔진
 
 
 def get_databases() -> list:
@@ -81,7 +89,7 @@ if db:
 
         if table:
             if table in tables:
-                key = st.text_input("openai 키 입력 : ")
+                key = OPENAI_API_KEY
 
                 if key:
                     sql = f"SELECT * FROM {db}.{table}"
