@@ -92,6 +92,7 @@ if db:
         if table:
             if table in tables:
                 key = st.text_input("OpenAI API Key를 입력해주세요")
+                key = key if key else OPENAI_API_KEY
 
                 if key:
                     sql = f"SELECT * FROM {db}.{table}"
